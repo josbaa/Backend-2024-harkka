@@ -1,8 +1,6 @@
-  Sovelluksen rakenne ja käyttö
-
   1.Sovelluksen yleinen rakenne
   
-  Sovellus on rakennettu käyttäen eri moduuleja, joiden avulla palvelin pystyy hallitsemaan tehokkaasti viestien ja käyttäjien käsittelyä sekä käyttöoikeuksien tarkistamista.
+  Sovellus on rakennettu käyttäen eri moduuleja, joiden avulla palvelin pystyy hallitsemaan viestien ja käyttäjien käsittelyä.
 
   Controllers: Sisältää MessagesController- ja UsersController-luokat, jotka käsittelevät viestien ja käyttäjien hallintaa koskevat API-pyynnöt.
 
@@ -16,9 +14,8 @@
 
   Program.cs: Määrittelee sovelluksen alustusprosessin, mukaan lukien tietokantayhteydet, autentikointijärjestelmän sekä välimoduulit.
 
-  2. Tarjotut rajapinnat
-
-  Sovelluksen tarjoaa seuraavat toiminnot:
+  2. Rajapinnat (API)
+     
   Käyttäjän luonti: POST /api/users
   Käyttäjän tietojen haku: GET /api/users/{username}
   Käyttäjän tietojen päivitys: PUT /api/users/{username}
@@ -30,8 +27,6 @@
   
   3. Sovelluksen käyttö
   Käyttöprosessin vaiheet:
-
-Käyttäjätunnuksen luonti:
 
 Käyttäjä lähettää pyynnön POST /api/users-päätepisteeseen, jolloin UsersController luo uuden käyttäjätunnuksen. Käytetty UserRepository huolehtii tietojen tallennuksesta.
 
