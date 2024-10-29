@@ -1,0 +1,6 @@
+@Backend_2024_harkka_HostAddress = http://localhost:5190
+
+GET {{Backend_2024_harkka_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
