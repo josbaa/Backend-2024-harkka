@@ -1,44 +1,43 @@
-  1.Sovelluksen yleinen rakenne
+1.Sovelluksen yleinen rakenne
   
-  Sovellus on rakennettu käyttäen eri moduuleja, joiden avulla palvelin pystyy hallitsemaan viestien ja käyttäjien käsittelyä.
+Sovellus on rakennettu käyttäen eri moduuleja, joiden avulla palvelin pystyy hallitsemaan viestien ja käyttäjien käsittelyä.
 
-  Controllers: Sisältää MessagesController- ja UsersController-luokat, jotka käsittelevät viestien ja käyttäjien hallintaa koskevat API-pyynnöt.
+Controllers: Sisältää MessagesController- ja UsersController-luokat, jotka käsittelevät viestien ja käyttäjien hallintaa koskevat API-pyynnöt.
 
-  Middleware: ApiKeyMiddleware- ja BasicAuthenticationHandler-moduulit vastaavat käyttöoikeuksien tarkastamisesta, API-avaimien käytöstä sekä perusautentikoinnista.
+Middleware: ApiKeyMiddleware- ja BasicAuthenticationHandler-moduulit vastaavat käyttöoikeuksien tarkastamisesta, API-avaimien käytöstä sekä perusautentikoinnista.
 
-  Models: Määrittelee tiedon rakenteet, joita sovellus käyttää viestien (Message) ja käyttäjien (User) tietojen hallintaan.
+Models: Määrittelee tiedon rakenteet, joita sovellus käyttää viestien (Message) ja käyttäjien (User) tietojen hallintaan.
 
-  Repositories: IMessageRepository, MessageRepository, IUserRepository ja UserRepository hoitavat tietokantakyselyitä ja tietojen käsittelyä käyttäen MessageServiceContext-tietokantayhteyttä.
+Repositories: IMessageRepository, MessageRepository, IUserRepository ja UserRepository hoitavat tietokantakyselyitä ja tietojen käsittelyä käyttäen MessageServiceContext-tietokantayhteyttä.
 
-  Services: UserAuthenticationService vastaa käyttäjien autentikoinnista ja oikeuksien tarkastamisesta, erityisesti käyttäjän omistamien viestien suhteen.
+Services: UserAuthenticationService vastaa käyttäjien autentikoinnista ja oikeuksien tarkastamisesta, erityisesti käyttäjän omistamien viestien suhteen.
 
-  Program.cs: Määrittelee sovelluksen alustusprosessin, mukaan lukien tietokantayhteydet, autentikointijärjestelmän sekä välimoduulit.
+Program.cs: Määrittelee sovelluksen alustusprosessin, mukaan lukien tietokantayhteydet, autentikointijärjestelmän sekä välimoduulit.
 
-  2. Rajapinnat (API)
+2. Rajapinnat (API)
      
-  Käyttäjän luonti: POST /api/users
-  Käyttäjän tietojen haku: GET /api/users/{username}
-  Käyttäjän tietojen päivitys: PUT /api/users/{username}
+Käyttäjän luonti: POST /api/users
+Käyttäjän tietojen haku: GET /api/users/username
+Käyttäjän tietojen päivitys: PUT /api/users/username
   
-  Viestien käsittely:
-  Uuden viestin luonti: POST /api/messages
-  Kaikkien julkisten viestien haku: GET /api/messages
-  Tietyn viestin haku: GET /api/messages/{id}
+Viestien käsittely:
+Uuden viestin luonti: POST /api/messages
+Kaikkien julkisten viestien haku: GET /api/messages
+Tietyn viestin haku: GET /api/messages/{id}
   
-  3. Sovelluksen käyttö
-  Käyttöprosessin vaiheet:
+3. Sovelluksen käyttö
 
-Käyttäjä lähettää pyynnön POST /api/users-päätepisteeseen, jolloin UsersController luo uuden käyttäjätunnuksen. Käytetty UserRepository huolehtii tietojen tallennuksesta.
+Käyttöprosessin vaiheet:
+Käyttäjä lähettää pyynnön POST /api/users-päätepisteeseen, jolloin UsersController luo uuden käyttäjätunnuksen. 
+Käytetty UserRepository huolehtii tietojen tallennuksesta.
 
 Autentikointi ja API-avain:
 ApiKeyMiddleware varmistaa, että pyynnön mukana on API-avain. BasicAuthenticationHandler varmistaa käyttäjän todennuksen ja huolehtii siitä, että käyttäjä on oikeutettu toimintoihin.
 
-Toimintojen käyttö tokenilla:
+Toimintojen käyttö:
 Program.cs määrittelee autentikoinnin, joka tarkistaa käyttöoikeudet kaikkien kutsujen yhteydessä.
 
 4. Esimerkkiprosessi: Viestin lähettäminen
-
-Pyyntö:
 
 Käyttäjä lähettää POST /api/messages-pyynnön.
 
