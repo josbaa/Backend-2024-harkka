@@ -23,7 +23,7 @@ Käyttäjän tietojen päivitys: PUT /api/users/username
 Viestien käsittely:
 Uuden viestin luonti: POST /api/messages
 Kaikkien julkisten viestien haku: GET /api/messages
-Tietyn viestin haku: GET /api/messages/{id}
+Tietyn viestin haku: GET /api/messages/
   
 3. Sovelluksen käyttö
 
