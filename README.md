@@ -1,5 +1,4 @@
-1.Sovelluksen yleinen rakenne
-![Näyttökuva 2024-11-03 115416](https://github.com/user-attachments/assets/2b69a7af-b373-4b0f-a2d5-461c257381d9)
+1.Sovelluksen yleinen rakenne [Näyttökuva 2024-11-03 115416](https://github.com/user-attachments/assets/2b69a7af-b373-4b0f-a2d5-461c257381d9)
 
 Tämä sovellus on viestintäsovellus, joka vastaa viestien hallinnasta, käyttäjätilien luomisesta ja niiden hallinnasta sekä tietojen pysyvästä tallentamisesta tietokantaan.
 
