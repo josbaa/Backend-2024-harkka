@@ -1,6 +1,7 @@
 1.Sovelluksen yleinen rakenne
-  
-Sovellus on rakennettu käyttäen eri moduuleja, joiden avulla palvelin pystyy hallitsemaan viestien ja käyttäjien käsittelyä.
+![Näyttökuva 2024-11-03 115416](https://github.com/user-attachments/assets/2b69a7af-b373-4b0f-a2d5-461c257381d9)
+
+Tämä sovellus on viestintäsovellus, joka vastaa viestien hallinnasta, käyttäjätilien luomisesta ja niiden hallinnasta sekä tietojen pysyvästä tallentamisesta tietokantaan.
 
 Controllers: Sisältää MessagesController- ja UsersController-luokat, jotka käsittelevät viestien ja käyttäjien hallintaa koskevat API-pyynnöt.
 
@@ -10,7 +11,7 @@ Models: Määrittelee tiedon rakenteet, joita sovellus käyttää viestien (Mess
 
 Repositories: IMessageRepository, MessageRepository, IUserRepository ja UserRepository hoitavat tietokantakyselyitä ja tietojen käsittelyä käyttäen MessageServiceContext-tietokantayhteyttä.
 
-Services: UserAuthenticationService vastaa käyttäjien autentikoinnista ja oikeuksien tarkastamisesta, erityisesti käyttäjän omistamien viestien suhteen.
+Services: Näihin tiedostoihin on sijoitettu liiketoimintalogiikka, eli varsinaiset toiminnot, kuten viestin lähetys, viestien haku, käyttäjän luonti ja kirjautuminen.
 
 Program.cs: Määrittelee sovelluksen alustusprosessin, mukaan lukien tietokantayhteydet, autentikointijärjestelmän sekä välimoduulit.
 
@@ -22,7 +23,9 @@ Käyttäjän tietojen päivitys: PUT /api/users/username
   
 Viestien käsittely:
 Uuden viestin luonti: POST /api/messages
+
 Kaikkien julkisten viestien haku: GET /api/messages
+
 Tietyn viestin haku: GET /api/messages/
   
 3. Sovelluksen käyttö
